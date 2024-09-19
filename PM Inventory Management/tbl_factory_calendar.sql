@@ -11,14 +11,12 @@ create table if not exists o2c.tbl_factory_calendar (
    CalendarText         STRING,
    Year_from_which_data_is_stored STRING,
    Year_from_which_data_is_saved STRING,
-   Bit_for_workday_1    STRING,
    Bit_for_workday_2    STRING,
    Public_Holiday_Calendar STRING,
    CalendarDate         DATE,
-   workDay              INT,
    change_type          STRING,
-   "timeStamp"          TIMESTAMP,
-   constraint FK_FACTORYCALENDAR_PUBLICHOLIDAYCALENDAR foreign key (Kernel_Name, Public_Holiday_Calendar, change_type, "timeStamp") references o2c.tbl_public_holiday_calendar (Kernel_Name, Public_Holiday_Calendar, change_type, "timeStamp") disable novalidate,
+   `timeStamp`          TIMESTAMP,
+   constraint FK_FACTORYCALENDAR_PUBLICHOLIDAYCALENDAR foreign key (Kernel_Name, Public_Holiday_Calendar, change_type, `timeStamp`) references o2c.tbl_public_holiday_calendar (Kernel_Name, Public_Holiday_Calendar, change_type, `timeStamp`) disable novalidate,
    constraint FK_FACTORYCALENDAR_PLANT foreign key (Client_Name, Plant) references o2c.tbl_plant (Client_Name, Plant) disable novalidate
 )
    USING delta
