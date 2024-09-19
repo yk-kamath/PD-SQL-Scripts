@@ -135,7 +135,7 @@ create table if not exists o2c.tbl_item (
    agCode               STRING,
    agName               STRING,
    change_type          STRING,
-   "timeStamp"          TIMESTAMP,
+   `timeStamp`          TIMESTAMP,
    minimum_temperature__ STRING,
    maximum_temperature__ STRING,
    uom_for_temperature__ STRING,
